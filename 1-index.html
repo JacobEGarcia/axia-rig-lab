@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXIA / RIG LAB</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.png" type="image/png">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="stage"></div>
+
+<aside id="panel">
+  <header>
+    <h1>AXIA <span>/ RIG LAB</span></h1>
+    <p class="sub">illustration &rarr; 3D &rarr; rigged &amp; moving</p>
+  </header>
+
+  <section>
+    <h2>ACTIONS</h2>
+    <div class="btn-grid" id="actions">
+      <button data-anim="idle" class="on">IDLE <em>立ち</em></button>
+      <button data-anim="walk">WALK <em>歩く</em></button>
+      <button data-anim="run">RUN <em>走る</em></button>
+      <button data-anim="jump">JUMP <em>跳ぶ</em></button>
+      <button data-anim="wave">WAVE <em>手を振る</em></button>
+      <button data-anim="dance">DANCE <em>ダンス</em></button>
+    </div>
+  </section>
+
+  <section>
+    <h2>POSE</h2>
+    <label>HEAD TILT <input type="range" id="p-headtilt" min="-40" max="40" value="0"><b>0</b></label>
+    <label>HEAD TURN <input type="range" id="p-headturn" min="-50" max="50" value="0"><b>0</b></label>
+    <label>ARM L <input type="range" id="p-arml" min="-170" max="170" value="0"><b>0</b></label>
+    <label>ARM R <input type="range" id="p-armr" min="-170" max="170" value="0"><b>0</b></label>
+    <label>ELBOW L <input type="range" id="p-elbl" min="0" max="140" value="0"><b>0</b></label>
+    <label>ELBOW R <input type="range" id="p-elbr" min="0" max="140" value="0"><b>0</b></label>
+    <label>SPINE <input type="range" id="p-spine" min="-25" max="35" value="0"><b>0</b></label>
+    <label>LEG SPREAD <input type="range" id="p-legs" min="0" max="40" value="0"><b>0</b></label>
+  </section>
+
+  <section>
+    <h2>SYSTEM</h2>
+    <label>PLAYBACK SPEED <input type="range" id="p-speed" min="10" max="200" value="100"><b>1.0x</b></label>
+    <label>HAIR SWAY <input type="range" id="p-sway" min="0" max="200" value="100"><b>1.0x</b></label>
+    <div class="btn-grid">
+      <button id="b-orbit">AUTO ORBIT</button>
+      <button id="b-quad">4-VIEW</button>
+      <button id="b-sheet" class="wide">DESIGN SHEET</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>2D concept &rarr; procedural 3D &rarr; FK rig, all in the browser.<br>
+    After <a href="https://x.com/manaimovie/status/2098250053995618404" target="_blank" rel="noopener">@manaimovie</a>&rsquo;s Tripo &times; Astra character workflow.</p>
+  </footer>
+</aside>
+
+<button id="panel-toggle" title="toggle panel">&#9776;</button>
+
+<div id="sheet-modal" class="hidden">
+  <div class="sheet-inner">
+    <img src="axia-front.png" alt="AXIA front">
+    <img src="axia-back.png" alt="AXIA back">
+    <button id="sheet-close">CLOSE</button>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
